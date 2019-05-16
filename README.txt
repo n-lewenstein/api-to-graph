@@ -1,4 +1,4 @@
-Wrriten :Naftali Lewenstein
+Wrriten by :Naftali Lewenstein
 email:tolimanman@gmail.com
 Program name:api-to-chart
 
