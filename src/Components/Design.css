@@ -1,0 +1,50 @@
+.box{
+    width:500px;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+ }
+
+input {
+    -webkit-transition: all 125ms ease-out 125ms;
+    -moz-transition: all 125ms ease-out 125ms;
+    -o-transition: all 125ms ease-out 125ms;
+    transition: all 125ms ease-out 125ms;
+}
+input::-webkit-input-placeholder {
+    color: #bdc3c7;
+}
+input:-moz-placeholder {
+    color: #bdc3c7;
+}
+input::-moz-placeholder {
+    color: #bdc3c7;
+}
+input:-ms-input-placeholder {
+    color: #bdc3c7;
+}
+input {
+
+    margin-top: 5px;
+    border: 0;
+    border: 1px solid #3498db;
+    outline: none;
+    width: 100%;
+    text-align: center;
+    font-family:'Poiret One', cursive;
+    font-size: 26px;
+    background-color: #fff;
+    color: #2c3e50;
+}
+ul{
+    list-style: none;
+    text-align: center;
+    font-size: 10px;
+    margin: auto;
+    color: #3498db;
+}
+.list-wrapper{
+    border: #2c3e50 2px dotted;
+    width:100%;
+}
