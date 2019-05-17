@@ -95,7 +95,7 @@ class Population extends Component {
      //Updates from input the amount of points to be shown 
      pointChange(value){
 
-      if(value.target.value==''){
+      if(value.target.value===''){
         this.setState({points: 0});
       }else if(isNaN(value.target.value)){
         console.log("Only numbers aloud!");
@@ -107,7 +107,7 @@ class Population extends Component {
 
     //Updates from input the threshold line
       thresholdChange(value){
-        if(value.target.value==''){
+        if(value.target.value===''){
           this.setState({threshold:0});
         }else if(isNaN(value.target.value)){
           console.log("Only numbers aloud!");
