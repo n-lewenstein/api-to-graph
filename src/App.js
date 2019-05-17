@@ -36,13 +36,13 @@ class App extends Component {
              5.valuePath = Path for accessing and mapping values from result of api 
     */
     this.state = {
-    api:'transportation',
+    api:'population',
     data:{
-    category:'Transportation',
-    apiPath:'http://transport.opendata.ch/v1/locations?query=Zurich',
-    dataPath:'result.data.stations',
+    category:'Population',
+    apiPath:'https://restcountries.eu/rest/v2/all?fields=name;population;',
+    dataPath:'result.data',
     labelPath:'e=>(e.name)',
-    valuePath:'e=>(e.id)'
+    valuePath:'e=>(e.population)'
     }
     }
   }
@@ -118,10 +118,10 @@ loadComponent(){
     <div className="App">
 
     <select className="minimal" value={this.state.api} onChange={this.apiChange.bind(this)}>
-    <option value={'transportation'} >Zurich transportation</option>
     <option value={'population'} >World poulation</option>
     <option value={'makeup'} >Make-Up prices</option>
     <option value={'area'} >Country area's </option>
+    <option value={'transportation'} >Zurich transportation</option>
     </select>
 
     <Charts 

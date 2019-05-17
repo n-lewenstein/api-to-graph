@@ -25,8 +25,8 @@ class Population extends Component {
             loading: true,
             error: "",
             data: [],
-            points: '',
-            threshold:'',
+            points: 0,
+            threshold:0,
             apiPath:'',
             dataPath:'',
             labelPath:'',
@@ -94,12 +94,27 @@ class Population extends Component {
 
      //Updates from input the amount of points to be shown 
      pointChange(value){
+
+      if(value.target.value==''){
+        this.setState({points: 0});
+      }else if(isNaN(value.target.value)){
+        console.log("Only numbers aloud!");
+      }
+      else{
         this.setState({points: value.target.value});
+      }
       }
 
     //Updates from input the threshold line
       thresholdChange(value){
-        this.setState({threshold: value.target.value});
+        if(value.target.value==''){
+          this.setState({threshold:0});
+        }else if(isNaN(value.target.value)){
+          console.log("Only numbers aloud!");
+        }
+        else{
+          this.setState({threshold: value.target.value});
+        }
       }
 
     //Creates and returns an array with the lables of the graph

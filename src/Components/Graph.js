@@ -16,7 +16,8 @@ class Graph extends Component{
         chartData = The data/Datasets of the graph which is sent to chart.js component. 
         */
         this.state={
-            chartData:''
+            chartData:'',
+            overThresholdItms:[]
         }
     }
     //Loads the properties of the graph for the first time
@@ -62,10 +63,12 @@ class Graph extends Component{
 
             ],
            
-        }
+        },
         
-        
-    })}
+        overThresholdItms:this.getOverThreshold()
+    },
+    
+    )}
     }
 
     //Returns an array with size of points which presents the threshold
@@ -83,10 +86,11 @@ class Graph extends Component{
         let data = [];
         let length = this.props.points;
         for(let i = 0; i < length; i++){
-            if(this.props.side[i]>=this.props.threshold){
+            if(Number(this.props.side[i])>Number(this.props.threshold)){
                 data.push(this.props.bottom[i]);
             }
         }
+       
         return data;
     }
 
@@ -102,7 +106,7 @@ class Graph extends Component{
           <div className='list-wrapper'>
           <h4>List of items above threshold</h4>
           <ul>
-                {this.getOverThreshold().map(function(name, index){
+                {this.state.overThresholdItms.map(function(name, index){
                     return <li key={ index }>{name}</li>;
                   })}
         </ul>
